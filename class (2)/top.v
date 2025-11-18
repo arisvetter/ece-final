@@ -46,8 +46,8 @@ module top(
     .resetAndToggle(comp_reset)
     );
     
-    d_flipflop output_inst (
-    .data(comp_reset),
+    t_flipflop output_inst (
+    .T(comp_reset),
     .clk(btnC),
     .Q(led[6])
     );
