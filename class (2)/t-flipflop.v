@@ -1,7 +1,6 @@
 module t_flipflop(
     input T, clk,
-    output Q,
-    output notQ
+    output Q
     );
     
 
@@ -10,7 +9,6 @@ module t_flipflop(
     .J(T),
     .K(T),
     .Q(Q),
-    .notQ(notQ)
     );
     
 endmodule
