@@ -37,12 +37,12 @@ module top(
     /////////////////////
     
     wire comp_reset;
-    wire comp_bit3;
+    wire comp_bit1;
     wire comp_bit2;
     
     comparator inst1 (
+    .bit1(comp_bit1),
     .bit2(comp_bit2),
-    .bit3(comp_bit3),
     .resetAndToggle(comp_reset)
     );
     
@@ -82,16 +82,6 @@ module top(
     .reset(comp_reset)
     );
     
-    wire datawire_bit3;
-    wire QAwire_bit3;
-    
-    d_flipflop bit3_modulo(
-    .data(datawire_bit3),
-    .Q(QAwire_bit3),
-    .clk(btnC),
-    .reset(comp_reset)
-    );
-    
     wire cout_0;
     wire cout_1;
     wire cout_2;
@@ -119,13 +109,6 @@ module top(
      .Y(datawire_bit2),
      .Cout(cout_2)
     );
-    
-    full_adder bit3_adder (
-    .A(QAwire_bit3),
-    .B(1'b1),
-    .Cin(cout_2),
-    .Y(datawire_bit3)
-    );  
     
     assign led[3] = QAwire_bit0;
     assign led[4] = QAwire_bit1;
