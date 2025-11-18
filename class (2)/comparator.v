@@ -4,3 +4,5 @@ module comparator (
 );
 
 assign resetAndToggle = bit3 & bit2;
+
+endmodule
