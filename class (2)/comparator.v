@@ -1,8 +1,8 @@
 module comparator (
-    input bit2, bit3,
+    input bit1, bit2,
     output resetAndToggle
 );
 
-assign resetAndToggle = bit3 & bit2;
+assign resetAndToggle = bit1 & bit2;
 
 endmodule

@@ -17,9 +17,10 @@ In this lab, we made a ripple counter and a modulo divider.
 
 The ripple counter takes a clock input and feeds it into a chain of T-FlipFlops. TFF's toggle their input when enabled. For a ripple counter, we set the toggle signal to always be 1, and the data input to the output of the previous TFF, or for the first, the clock signal. Each TFF results in the clock input getting divided by two, so a chain of N TFF's results in a clock input of 1/(2^N). In this lab, as we want to divide by 8, we need three TFFs, becasue 2^3 equals 8;
 
-The modulo divider is 
+The modulo divider is essentially a modulo counter that resets on the number you want to divide the clock input by (in this case, 12). 
 
 ### 1 - Why does the Modulo Counter actually divide clocks by 2 * Count?
+The module counter divides by 2 * count because it takes two full counts to transition from high to low and back to high.
 
 ### 2 - Why does the ring counter's output go to all 1s on the first clock cycle?
 
